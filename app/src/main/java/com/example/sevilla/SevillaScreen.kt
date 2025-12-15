@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,12 +28,13 @@ import com.example.sevilla.ui.CategoriaScreen
 import com.example.sevilla.ui.DetallesLugarScreen
 import com.example.sevilla.ui.LugaresScreen
 import com.example.sevilla.ui.SevillaViewModel
+import com.example.sevilla.ui.theme.SevillaTheme
 
 
 enum class SevillaScreen(@StringRes val title: Int) {
     Categorias(title = R.string.app_name),
     Lugares(title = R.string.lugares),
-    DetallesLugar(title = R.string.app_name),               // Colocar el nombre correcto de la pantalla
+    DetallesLugar(title = R.string.app_name)    // TODO("Colocar nombre correcto de la pantalla")
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,12 +45,17 @@ fun SevillaTopAppBar(
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    TopAppBar(
-        title = { Text(stringResource(currentScreen.title)) },
+    CenterAlignedTopAppBar(
+        title = {
+            Text(
+                text = stringResource(currentScreen.title),
+                style = MaterialTheme.typography.displayLarge,
+                color = MaterialTheme.colorScheme.onPrimary
+            )
+        },
         colors = TopAppBarDefaults.mediumTopAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer
+            containerColor = MaterialTheme.colorScheme.primary
         ),
-        modifier = modifier,
         navigationIcon = {
             if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
@@ -58,7 +65,8 @@ fun SevillaTopAppBar(
                     )
                 }
             }
-        }
+        },
+        modifier = modifier,
     )
 }
 
