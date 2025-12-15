@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sevilla</string>
+    <string name="lugares">Lugares</string>
+    <string name="museos">Museos</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="hoteles">Hoteles</string>
+    <string name="parques">Parques</string>
+    <string name="iglesias">Iglesias</string>
 </resources>

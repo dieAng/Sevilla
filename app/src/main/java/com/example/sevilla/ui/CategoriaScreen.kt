@@ -1,18 +1,19 @@
 package com.example.sevilla.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.sevilla.data.DataSource
+import com.example.sevilla.model.SevillaItem
 
 @Composable
-fun LugaresScreen(
-    modifier: Modifier = Modifier
+fun CategoriaScreen(
+    categorias: List<SevillaItem.Categoria> = DataSource.categorias,
+    onCategoriaClick: (SevillaItem.Categoria) -> Unit,
 ) {
-    La
+
 }
 
 @Preview
 @Composable
-fun LugaresScreenPreview() {
-    LugaresScreen()
+fun CategoriaScreenPreview() {
 }
