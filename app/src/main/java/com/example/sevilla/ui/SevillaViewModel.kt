@@ -12,9 +12,17 @@ class SevillaViewModel : ViewModel() {
     val uiState: StateFlow<SevillaUiState> = _uiState.asStateFlow()
 
     fun updateCurrentCategoria(categoria: Categoria) {
-        TODO("Not yet implemented")
+        _uiState.value = _uiState.value.copy(currentCategoria = categoria)
     }
     fun updateCurrentLugar(lugar: Lugar) {
-        TODO("Not yet implemented")
+        _uiState.value = _uiState.value.copy(currentLugar = lugar)
+    }
+
+    fun resetCurrentCategoria() {
+        _uiState.value = _uiState.value.copy(currentCategoria = null)
+    }
+
+    fun resetCurrentLugar() {
+        _uiState.value = _uiState.value.copy(currentLugar = null)
     }
 }

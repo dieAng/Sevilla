@@ -1,5 +1,7 @@
 package com.example.sevilla
 
+import android.content.Context
+import android.content.Intent
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -11,7 +13,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -28,7 +29,6 @@ import com.example.sevilla.ui.CategoriaScreen
 import com.example.sevilla.ui.DetallesLugarScreen
 import com.example.sevilla.ui.LugaresScreen
 import com.example.sevilla.ui.SevillaViewModel
-import com.example.sevilla.ui.theme.SevillaTheme
 
 
 enum class SevillaScreen(@StringRes val title: Int) {
@@ -40,7 +40,7 @@ enum class SevillaScreen(@StringRes val title: Int) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SevillaTopAppBar(
-    currentScreen: SevillaScreen,
+    @StringRes currentScreenTitle: Int,
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier
@@ -48,7 +48,7 @@ fun SevillaTopAppBar(
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = stringResource(currentScreen.title),
+                text = stringResource(currentScreenTitle),
                 style = MaterialTheme.typography.displayLarge,
                 color = MaterialTheme.colorScheme.onPrimary
             )
@@ -71,21 +71,24 @@ fun SevillaTopAppBar(
 }
 
 @Composable
-fun SevillaApp(
-    viewModel: SevillaViewModel = viewModel(),
-    navController: NavHostController = rememberNavController()
-) {
+fun SevillaApp() {
+    val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = SevillaScreen.valueOf(
         backStackEntry?.destination?.route ?: SevillaScreen.Categorias.name
     )
+    val viewModel: SevillaViewModel = viewModel()
 
     Scaffold(
         topBar = {
             SevillaTopAppBar(
-                currentScreen = currentScreen,
+                currentScreenTitle = currentScreen.title,
                 canNavigateBack = navController.previousBackStackEntry != null,
-                navigateUp = { navController.navigateUp() }
+                navigateUp = {
+                    navController.navigateUp()
+                    if (currentScreen == SevillaScreen.Lugares) viewModel.resetCurrentCategoria()
+                    if (currentScreen == SevillaScreen.DetallesLugar) viewModel.resetCurrentLugar()
+                }
             )
         }
     ) { innerPadding ->
@@ -126,4 +129,32 @@ fun SevillaApp(
             }
         }
     }
+}
+
+private fun NavigateToCategorias(
+    viewModel: SevillaViewModel,
+    navController: NavHostController
+) {
+    viewModel.resetCurrentLugar()
+    viewModel.resetCurrentCategoria()
+    navController.popBackStack(SevillaScreen.Categorias.name, inclusive = false)
+}
+
+private fun GoToMap(
+    context: Context,
+    subject: String,
+    summary: String
+) {
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        putExtra(Intent.EXTRA_SUBJECT, subject)
+        putExtra(Intent.EXTRA_TEXT, summary)
+    }
+
+    context.startActivity(
+        Intent.createChooser(
+            intent,
+            context.getString(R.string.app_name)  // TODO("Colocar titulo correcto")
+        )
+    )
 }
