@@ -16,13 +16,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sevilla.data.DataSource
-import com.example.sevilla.model.SevillaItem
 import com.example.sevilla.model.SevillaItem.Categoria
 
 @Composable
 fun CategoriaScreen(
     categorias: List<Categoria> = DataSource.categorias,
-    onCategoriaClick: (Categoria) -> Unit,
+    onCategoriaClick: (Categoria) -> Unit
 ) {
     LazyColumn {
         items(categorias) { categoria ->
