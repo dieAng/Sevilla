@@ -8,8 +8,8 @@ class SevillaItem {
     )
 
     data class Lugar(
-        val nombre: String,
-        val descripcion: String,
+        val nombre: Int,
+        val descripcion: Int?,
         val imagen: Int
     )
 }
