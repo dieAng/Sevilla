@@ -7,32 +7,31 @@ object DataSource {
     val categorias = listOf(
         Categoria(
             nombre = R.string.museos,
-            descripcion = "Los museos son lugares de interés",
             lugares = listOf(
                 Lugar(
-                    nombre = "Museo del Prado",
-                    descripcion = "El Museo del Prado es un museo situado en Madrid",
-                    imagen = TODO()
+                    nombre = "", // R.string.museo_bellas_artes
+                    descripcion = "", // R.string.museo_bellas_artes_descripcion
+                    imagen = R.drawable.museo_bellas_artes_img
                 ),
                 Lugar(
-                    nombre = "Museo Nacional de Arqueología",
-                    descripcion = "El Museo Nacional de Arqueología es un museo situado en Sevilla",
-                    imagen = TODO()
+                    nombre = "", // R.string.museo_ilusiones
+                    descripcion = "", // R.string.museo_ilusiones_descripcion
+                    imagen = R.drawable.museo_ilusiones_img
                 ),
                 Lugar(
-                    nombre = "Museo de Arte Contemporáneo",
-                    descripcion = "El Museo de Arte Contemporáneo es un museo situado en Sevilla",
-                    imagen = TODO()
+                    nombre = "", // R.string.museo_palacio_condesa_lebrija
+                    descripcion = "", // R.string.museo_palacio_condesa_lebrija_descripcion
+                    imagen = R.drawable.museo_palacio_condesa_lebrija_img
                 ),
                 Lugar(
-                    nombre = "Museo de Arte Contemporáneo",
-                    descripcion = "El Museo de Arte Contemporáneo es un museo situado en Sevilla",
-                    imagen = TODO()
+                    nombre = "", // R.string.casa_ciencia
+                    descripcion = "", // R.string.casa_ciencia_descripcion
+                    imagen = R.drawable.casa_ciencia_img
                 ),
                 Lugar(
-                    nombre = "Museo de Arte Contemporáneo",
-                    descripcion = "El Museo de Arte Contemporáneo es un museo situado en Sevilla",
-                    imagen = TODO()
+                    nombre = "", // R.string.antiquarium
+                    descripcion = "", // R.string.antiquarium_descipcion
+                    imagen = R.drawable.antiquarium_img
                 )
             ),
             imagen = TODO()
@@ -40,7 +39,6 @@ object DataSource {
 
         Categoria(
             nombre = R.string.restaurantes,
-            descripcion = "Los restaurantes son lugares de interés",
             lugares = listOf(
                 Lugar(
                     nombre = "Restaurante La Cantina",
@@ -73,7 +71,6 @@ object DataSource {
 
         Categoria(
             nombre = R.string.hoteles,
-            descripcion = "Los hoteles son lugares de interés",
             lugares = listOf(
                 Lugar(
                     nombre = "Hotel La Palma",
@@ -106,7 +103,6 @@ object DataSource {
 
         Categoria(
             nombre = R.string.parques,
-            descripcion = "Los parques son lugares de interés",
             lugares = listOf(
                 Lugar(
                     nombre = "Parque de los Ladrones",
@@ -139,7 +135,6 @@ object DataSource {
 
         Categoria(
             nombre = R.string.iglesias,
-            descripcion = "Las iglesias son lugares de interés",
             lugares = listOf(
                 Lugar(
                     nombre = "Iglesia de la Santísima Trinidad",
@@ -168,6 +163,6 @@ object DataSource {
                 )
             ),
             imagen = TODO()
-        ),
+        )
     )
 }

@@ -3,7 +3,6 @@ package com.example.sevilla.model
 class SevillaItem {
     data class Categoria(
         val nombre: Int,
-        val descripcion: String,
         val lugares: List<Lugar>,
         val imagen: Int
     )
