@@ -34,7 +34,7 @@ object DataSource {
                     imagen = R.drawable.antiquarium_img
                 )
             ),
-            imagen = TODO()
+            imagen = R.drawable.museos_img
         ),
 
         Categoria(
@@ -66,7 +66,7 @@ object DataSource {
                     imagen = R.drawable.tropiqual_img
                 )
             ),
-            imagen = TODO()
+            imagen = R.drawable.restaurantes_img
         ),
 
         Categoria(
@@ -98,7 +98,7 @@ object DataSource {
                     imagen = R.drawable.hotel_rey_alfonso_x_img
                 )
             ),
-            imagen = TODO()
+            imagen = R.drawable.hoteles_img
         ),
 
         Categoria(
@@ -130,7 +130,7 @@ object DataSource {
                     imagen = R.drawable.plaza_america_img
                 )
             ),
-            imagen = TODO()
+            imagen = R.drawable.parques_palazs_img
         ),
 
         Categoria(
@@ -162,7 +162,7 @@ object DataSource {
                     imagen = R.drawable.portada_iglesia_monasterio_santa_paula_img
                 )
             ),
-            imagen = TODO()
+            imagen = R.drawable.iglesias_img
         )
     )
 }
