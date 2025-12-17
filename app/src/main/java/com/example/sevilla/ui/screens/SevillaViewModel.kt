@@ -1,4 +1,4 @@
-package com.example.sevilla.ui
+package com.example.sevilla.ui.screens
 
 import androidx.lifecycle.ViewModel
 import com.example.sevilla.model.SevillaItem.*

@@ -1,4 +1,4 @@
-package com.example.sevilla.ui
+package com.example.sevilla.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

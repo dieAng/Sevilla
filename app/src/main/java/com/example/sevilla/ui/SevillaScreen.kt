@@ -1,4 +1,4 @@
-package com.example.sevilla
+package com.example.sevilla.ui
 
 import android.content.Context
 import android.content.Intent
@@ -25,10 +25,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.sevilla.ui.CategoriaScreen
-import com.example.sevilla.ui.DetallesLugarScreen
-import com.example.sevilla.ui.LugaresScreen
-import com.example.sevilla.ui.SevillaViewModel
+import com.example.sevilla.R
+import com.example.sevilla.ui.screens.CategoriaScreen
+import com.example.sevilla.ui.screens.DetallesLugarScreen
+import com.example.sevilla.ui.screens.LugaresScreen
+import com.example.sevilla.ui.screens.SevillaViewModel
 
 
 enum class SevillaScreen(@StringRes val title: Int) {
