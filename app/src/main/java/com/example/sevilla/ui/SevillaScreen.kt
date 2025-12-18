@@ -1,7 +1,9 @@
 package com.example.sevilla.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -18,9 +20,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -30,6 +32,7 @@ import com.example.sevilla.ui.screens.CategoriaScreen
 import com.example.sevilla.ui.screens.DetallesLugarScreen
 import com.example.sevilla.ui.screens.LugaresScreen
 import com.example.sevilla.ui.screens.SevillaViewModel
+import androidx.core.net.toUri
 
 
 enum class SevillaScreen(@StringRes val title: Int) {
@@ -67,7 +70,7 @@ fun SevillaTopAppBar(
                 }
             }
         },
-        modifier = modifier,
+        modifier = modifier
     )
 }
 
@@ -79,6 +82,7 @@ fun SevillaApp() {
         backStackEntry?.destination?.route ?: SevillaScreen.Categorias.name
     )
     val viewModel: SevillaViewModel = viewModel()
+    val context = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -123,8 +127,15 @@ fun SevillaApp() {
             }
 
             composable(route = SevillaScreen.DetallesLugar.name) {
+                val lugar = uiState.currentLugar
+                val ubicacion = stringResource(lugar?.ubicacion ?: 0)
                 DetallesLugarScreen(
-                    lugar = uiState.currentLugar,
+                    lugar = lugar,
+                    onGoToMap = {
+                        lugar?.let {
+                            goToMap(context, ubicacion)
+                        }
+                    },
                     modifier = Modifier
                 )
             }
@@ -132,30 +143,15 @@ fun SevillaApp() {
     }
 }
 
-private fun NavigateToCategorias(
-    viewModel: SevillaViewModel,
-    navController: NavHostController
-) {
-    viewModel.resetCurrentLugar()
-    viewModel.resetCurrentCategoria()
-    navController.popBackStack(SevillaScreen.Categorias.name, inclusive = false)
-}
+@SuppressLint("QueryPermissionsNeeded")
+private fun goToMap(context: Context, direccion: String) {
+    val encodedAddress = Uri.encode(direccion)
+    val locationUri = "geo:0,0?q=$encodedAddress".toUri()
 
-private fun GoToMap(
-    context: Context,
-    subject: String,
-    summary: String
-) {
-    val intent = Intent(Intent.ACTION_SEND).apply {
-        type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, subject)
-        putExtra(Intent.EXTRA_TEXT, summary)
+    val mapIntent = Intent(Intent.ACTION_VIEW, locationUri)
+    mapIntent.setPackage("com.google.android.apps.maps")
+
+    if (mapIntent.resolveActivity(context.packageManager) != null) {
+        context.startActivity(mapIntent)
     }
-
-    context.startActivity(
-        Intent.createChooser(
-            intent,
-            context.getString(R.string.app_name)  // TODO("Colocar titulo correcto")
-        )
-    )
 }
