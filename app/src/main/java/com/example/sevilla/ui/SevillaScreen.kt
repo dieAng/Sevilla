@@ -22,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -34,11 +35,10 @@ import com.example.sevilla.ui.screens.LugaresScreen
 import com.example.sevilla.ui.screens.SevillaViewModel
 import androidx.core.net.toUri
 
-
 enum class SevillaScreen(@StringRes val title: Int) {
     Categorias(title = R.string.app_name),
     Lugares(title = R.string.lugares),
-    DetallesLugar(title = R.string.app_name)    // TODO("Colocar nombre correcto de la pantalla")
+    DetallesLugar(title = R.string.detalles_lugar)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -82,7 +82,6 @@ fun SevillaApp() {
         backStackEntry?.destination?.route ?: SevillaScreen.Categorias.name
     )
     val viewModel: SevillaViewModel = viewModel()
-    val context = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -127,13 +126,14 @@ fun SevillaApp() {
             }
 
             composable(route = SevillaScreen.DetallesLugar.name) {
+                val context = LocalContext.current
                 val lugar = uiState.currentLugar
-                val ubicacion = stringResource(lugar?.ubicacion ?: 0)
+                val direccion = if (lugar != null) stringResource(lugar.ubicacion) else null
                 DetallesLugarScreen(
                     lugar = lugar,
                     onGoToMap = {
-                        lugar?.let {
-                            goToMap(context, ubicacion)
+                        if (direccion != null) {
+                            goToMap(context, direccion)
                         }
                     },
                     modifier = Modifier
@@ -149,9 +149,14 @@ private fun goToMap(context: Context, direccion: String) {
     val locationUri = "geo:0,0?q=$encodedAddress".toUri()
 
     val mapIntent = Intent(Intent.ACTION_VIEW, locationUri)
-    mapIntent.setPackage("com.google.android.apps.maps")
 
     if (mapIntent.resolveActivity(context.packageManager) != null) {
         context.startActivity(mapIntent)
     }
+}
+
+@Preview
+@Composable
+fun SevillaAppPreview() {
+    SevillaApp()
 }

@@ -121,31 +121,31 @@ object DataSource {
             lugares = listOf(
                 Lugar(
                     nombre = R.string.parque_maria_luisa,
-                    descripcion = null,
+                    descripcion = R.string.parque_maria_luisa_descripcion,
                     imagen = R.drawable.parque_maria_luisa_img,
                     ubicacion = R.string.parque_maria_luisa_ubicacion
                 ),
                 Lugar(
                     nombre = R.string.jardines_murillo,
-                    descripcion = null,
+                    descripcion = R.string.jardines_murillo_descripcion,
                     imagen = R.drawable.jardines_murillo_img,
                     ubicacion = R.string.jardines_murillo_ubicacion
                 ),
                 Lugar(
                     nombre = R.string.parque_alamillo,
-                    descripcion = null,
+                    descripcion = R.string.parque_alamillo_descripcion,
                     imagen = R.drawable.parque_alamillo_img,
                     ubicacion = R.string.parque_alamillo_ubicacion
                 ),
                 Lugar(
                     nombre = R.string.plaza_espana,
-                    descripcion = null,
+                    descripcion = R.string.plaza_espana_descripcion,
                     imagen = R.drawable.plaza_espana_img,
                     ubicacion = R.string.plaza_espana_ubicacion
                 ),
                 Lugar(
                     nombre = R.string.plaza_america,
-                    descripcion = null,
+                    descripcion = R.string.plaza_america_descripcion,
                     imagen = R.drawable.plaza_america_img,
                     ubicacion = R.string.plaza_america_ubicacion
                 )

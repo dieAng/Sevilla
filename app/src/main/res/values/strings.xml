@@ -35,7 +35,7 @@
     <string name="melia_sevilla">Melia Sevilla</string>
     <string name="melia_sevilla_descripcion"><![CDATA[El Hotel Meliá Sevilla se encuentra en el centro de Sevilla, junto a la Plaza de España y el parque María Luisa, a unos 15 minutos a pie de la catedral y el alcázar de Sevilla. Ofrece piscina al aire libre de temporada y TV de plasma. Las habitaciones del Hotel Meliá Sevilla Disponen de TV vía satélite con canales internacionales. El restaurante Mosaico del hotel sirve un desayuno buffet internacional. Además, el restaurante Quimera sirve comida internacional a la carta para el almuerzo y la cena, mientras que el Quimera Food & pool ofrece platos internacionales y de barbacoa para la cena, de junio a octubre, y música en directo los jueves y los sábados. El hotel también alberga una cafetería junto a la piscina y el elegante salón de cócteles Elyxr. No se permiten mascotas.]]></string>
     <string name="hotel_rey_alfonso_x">Hotel Rey Alfonso X</string>
-    <string name="hotel_rey_alfonso_x_descripcion">Dos majestuosos edificios situados en pleno centro histórico de la ciudad conforman el elegante IMG Hotel Rey Alfonso X, donde la tradición, modernidad y elegancia se encuentran en perfecta armonía. La recuperación de estos distinguidos edificios ha configurado una amplia oferta de habitaciones, con los rasgos comunes de ser luminosas, cómodas y actuales. Tanto los dormitorios como los baños están equipados de forma minuciosa para cubrir las necesidades de todos los tipos de clientes. La oferta de servicios de Hotel Rey Alfonso X está repleta de bellos detalles que harán su estancia inolvidable: el cliente puede saborear los platos de la carta del Bar, degustar un reconfortante desayuno buffet integrado por una amplia diversidad de productos o disfrutar de un descanso mientras contempla las vistas panorámicas de la ciudad desde el Bar de nuestra piscina situada en la terraza superior.</string>
+    <string name="hotel_rey_alfonso_x_descripcion">Dos majestuosos edificios situados en pleno centro histórico de la ciudad conforman el elegante IMG Hotel Rey Alfonso X, donde la tradición, modernidad y elegancia se encuentran en perfecta armonía. La recuperación de estos distinguidos edificios ha configurado una amplia oferta de habitaciones, con los rasgos comunes de ser luminosas, cómodas y actuales. Tanto los dormitorios como los baños están equipados de forma minuciosa para cubrir las necesidades de todos los tipos de clientes. La oferta de servicios de Hotel Rey Alfonso X está repleta de bellos detalles que harán su estancia inolvidable.</string>
     <string name="parque_maria_luisa">Parque de María Luisa</string>
     <string name="jardines_murillo">Jardines de Murillo</string>
     <string name="parque_alamillo">Parque del Alamillo</string>
@@ -76,4 +76,10 @@
     <string name="santa_ana_ubicacion">Santa Ana, 41002 Sevilla</string>
     <string name="san_marcos_ubicacion">Plaza San Marcos, 10, 41003 Sevilla</string>
     <string name="portada_iglesia_monasterio_santa_paula_ubicacion">Calle Santa Paula, 11, 41003 Sevilla</string>
+    <string name="detalles_lugar">Detalles</string>
+    <string name="parque_maria_luisa_descripcion">\n</string>
+    <string name="jardines_murillo_descripcion" />
+    <string name="parque_alamillo_descripcion" />
+    <string name="plaza_espana_descripcion" />
+    <string name="plaza_america_descripcion" />
 </resources>
