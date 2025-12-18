@@ -1,9 +1,12 @@
 package com.example.sevilla.ui.screens
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,6 +15,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -25,7 +29,10 @@ fun CategoriaScreen(
     categorias: List<Categoria> = DataSource.categorias,
     onCategoriaClick: (Categoria) -> Unit
 ) {
-    LazyColumn {
+    LazyColumn(
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
         items(categorias) { categoria ->
             CategoriaItem(
                 categoria = categoria,
@@ -42,32 +49,35 @@ fun CategoriaItem(
 ) {
     Card(
         onClick = { onCategoriaClick(categoria) },
-        modifier = Modifier.padding(8.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(bottomEnd = 30.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface
-        ),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
     ){
-        Row {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Image(
                 painter = painterResource(categoria.imagen),
-                contentDescription = null
+                contentDescription = null,
+                modifier = Modifier.size(40.dp)
             )
 
             Text(
                 text = stringResource(categoria.nombre),
-                style = MaterialTheme.typography.displayMedium,
-                color = MaterialTheme.colorScheme.onSurface,
-                modifier = Modifier.padding(8.dp)
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(start = 24.dp)
             )
         }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun CategoriaScreenPreview() {
     CategoriaScreen(
