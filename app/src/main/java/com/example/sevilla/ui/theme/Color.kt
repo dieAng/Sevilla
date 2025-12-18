@@ -1,6 +1,9 @@
 package com.example.sevilla.ui.theme
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Colores para el tema claro.
+ */
 val primaryLight = Color(0xFF8D4A5A)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFFFD9DF)
@@ -37,6 +40,9 @@ val surfaceContainerLight = Color(0xFFFBEAEC)
 val surfaceContainerHighLight = Color(0xFFF5E4E6)
 val surfaceContainerHighestLight = Color(0xFFEFDEE0)
 
+/**
+ * Colores para el tema claro con contraste medio.
+ */
 val primaryLightMediumContrast = Color(0xFF5C2233)
 val onPrimaryLightMediumContrast = Color(0xFFFFFFFF)
 val primaryContainerLightMediumContrast = Color(0xFF9E5869)
@@ -73,6 +79,9 @@ val surfaceContainerLightMediumContrast = Color(0xFFF5E4E6)
 val surfaceContainerHighLightMediumContrast = Color(0xFFEAD9DB)
 val surfaceContainerHighestLightMediumContrast = Color(0xFFDECED0)
 
+/**
+ * Colores para el tema claro con contraste alto.
+ */
 val primaryLightHighContrast = Color(0xFF501829)
 val onPrimaryLightHighContrast = Color(0xFFFFFFFF)
 val primaryContainerLightHighContrast = Color(0xFF743545)
@@ -109,6 +118,9 @@ val surfaceContainerLightHighContrast = Color(0xFFEFDEE0)
 val surfaceContainerHighLightHighContrast = Color(0xFFE1D0D2)
 val surfaceContainerHighestLightHighContrast = Color(0xFFD3C3C4)
 
+/**
+ * Colores para el tema oscuro.
+ */
 val primaryDark = Color(0xFFFFB1C2)
 val onPrimaryDark = Color(0xFF551D2D)
 val primaryContainerDark = Color(0xFF713343)
@@ -145,6 +157,9 @@ val surfaceContainerDark = Color(0xFF261D1F)
 val surfaceContainerHighDark = Color(0xFF312829)
 val surfaceContainerHighestDark = Color(0xFF3C3234)
 
+/**
+ * Colores para el tema oscuro con contraste medio.
+ */
 val primaryDarkMediumContrast = Color(0xFFFFD1D9)
 val onPrimaryDarkMediumContrast = Color(0xFF481222)
 val primaryContainerDarkMediumContrast = Color(0xFFC87A8C)
@@ -181,6 +196,9 @@ val surfaceContainerDarkMediumContrast = Color(0xFF2F2527)
 val surfaceContainerHighDarkMediumContrast = Color(0xFF3A3032)
 val surfaceContainerHighestDarkMediumContrast = Color(0xFF463B3D)
 
+/**
+ * Colores para el tema oscuro con contraste alto.
+ */
 val primaryDarkHighContrast = Color(0xFFFFEBEE)
 val onPrimaryDarkHighContrast = Color(0xFF000000)
 val primaryContainerDarkHighContrast = Color(0xFFFFABBD)

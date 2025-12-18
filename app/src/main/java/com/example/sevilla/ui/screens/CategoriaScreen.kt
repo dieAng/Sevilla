@@ -24,6 +24,12 @@ import androidx.compose.ui.unit.dp
 import com.example.sevilla.data.DataSource
 import com.example.sevilla.model.SevillaItem.Categoria
 
+/**
+ * Una pantalla componible que muestra una lista de categorías.
+ *
+ * @param categorias La lista de categorías a mostrar.
+ * @param onCategoriaClick La función a la que se llamará cuando se haga clic en una categoría.
+ */
 @Composable
 fun CategoriaScreen(
     categorias: List<Categoria> = DataSource.categorias,
@@ -42,6 +48,12 @@ fun CategoriaScreen(
     }
 }
 
+/**
+ * Un elemento componible que muestra una sola categoría.
+ *
+ * @param categoria La categoría a mostrar.
+ * @param onCategoriaClick La función a la que se llamará cuando se haga clic en la categoría.
+ */
 @Composable
 fun CategoriaItem(
     categoria: Categoria,
@@ -77,6 +89,9 @@ fun CategoriaItem(
     }
 }
 
+/**
+ * Una vista previa componible para la pantalla de categorías.
+ */
 @Preview(showBackground = true)
 @Composable
 fun CategoriaScreenPreview() {

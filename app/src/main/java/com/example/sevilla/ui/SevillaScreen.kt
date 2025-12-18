@@ -35,12 +35,25 @@ import com.example.sevilla.ui.screens.LugaresScreen
 import com.example.sevilla.ui.screens.SevillaViewModel
 import androidx.core.net.toUri
 
+/**
+ * Un enum que representa las diferentes pantallas de la aplicación.
+ *
+ * @property title El ID del recurso de cadena para el título de la pantalla.
+ */
 enum class SevillaScreen(@StringRes val title: Int) {
     Categorias(title = R.string.app_name),
     Lugares(title = R.string.lugares),
     DetallesLugar(title = R.string.detalles_lugar)
 }
 
+/**
+ * Una barra de aplicaciones superior componible para la aplicación de Sevilla.
+ *
+ * @param currentScreenTitle El ID del recurso de cadena para el título de la pantalla actual.
+ * @param canNavigateBack Si el usuario puede navegar hacia atrás.
+ * @param navigateUp La función a la que se llamará cuando el usuario haga clic en el icono de navegación.
+ * @param modifier El modificador que se aplicará a la barra de aplicaciones superior.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SevillaTopAppBar(
@@ -74,6 +87,9 @@ fun SevillaTopAppBar(
     )
 }
 
+/**
+ * El componible principal de la aplicación de Sevilla.
+ */
 @Composable
 fun SevillaApp() {
     val navController = rememberNavController()
@@ -143,6 +159,12 @@ fun SevillaApp() {
     }
 }
 
+/**
+ * Navega a la aplicación de mapas con la dirección especificada.
+ *
+ * @param context El contexto de la aplicación.
+ * @param direccion La dirección a mostrar en el mapa.
+ */
 @SuppressLint("QueryPermissionsNeeded")
 private fun goToMap(context: Context, direccion: String) {
     val encodedAddress = Uri.encode(direccion)
@@ -155,6 +177,9 @@ private fun goToMap(context: Context, direccion: String) {
     }
 }
 
+/**
+ * Una vista previa componible para la aplicación de Sevilla.
+ */
 @Preview
 @Composable
 fun SevillaAppPreview() {

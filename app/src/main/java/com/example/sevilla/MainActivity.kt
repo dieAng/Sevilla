@@ -7,6 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import com.example.sevilla.ui.SevillaApp
 import com.example.sevilla.ui.theme.SevillaTheme
 
+/**
+ * Actividad principal de la aplicación.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

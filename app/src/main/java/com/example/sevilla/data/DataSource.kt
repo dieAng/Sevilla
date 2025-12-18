@@ -3,7 +3,13 @@ package com.example.sevilla.data
 import com.example.sevilla.R
 import com.example.sevilla.model.SevillaItem.*
 
+/**
+ * Un objeto que proporciona datos para la aplicación de Sevilla.
+ */
 object DataSource {
+    /**
+     * Una lista de categorías, cada una con una lista de lugares.
+     */
     val categorias = listOf(
         Categoria(
             nombre = R.string.museos,

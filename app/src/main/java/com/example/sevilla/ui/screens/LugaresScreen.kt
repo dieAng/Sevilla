@@ -26,6 +26,13 @@ import androidx.compose.ui.unit.dp
 import com.example.sevilla.data.DataSource
 import com.example.sevilla.model.SevillaItem
 
+/**
+ * Una pantalla componible que muestra una lista de lugares.
+ *
+ * @param lugares La lista de lugares a mostrar.
+ * @param onLugarClick La función a la que se llamará cuando se haga clic en un lugar.
+ * @param modifier El modificador que se aplicará a la pantalla.
+ */
 @Composable
 fun LugaresScreen(
     lugares: List<SevillaItem.Lugar>,
@@ -46,6 +53,12 @@ fun LugaresScreen(
     }
 }
 
+/**
+ * Un elemento componible que muestra un solo lugar.
+ *
+ * @param lugar El lugar a mostrar.
+ * @param onLugarClick La función a la que se llamará cuando se haga clic en el lugar.
+ */
 @Composable
 fun LugarItem(
     lugar: SevillaItem.Lugar,
@@ -83,6 +96,9 @@ fun LugarItem(
     }
 }
 
+/**
+ * Una vista previa componible para la pantalla de lugares.
+ */
 @Preview
 @Composable
 fun LugaresScreenPreview() {

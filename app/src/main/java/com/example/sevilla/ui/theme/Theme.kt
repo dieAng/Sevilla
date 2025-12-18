@@ -14,6 +14,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 
+/**
+ * El esquema de color claro para la aplicación.
+ */
 private val lightScheme = lightColorScheme(
     primary = primaryLight,
     onPrimary = onPrimaryLight,
@@ -52,6 +55,9 @@ private val lightScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLight,
 )
 
+/**
+ * El esquema de color oscuro para la aplicación.
+ */
 private val darkScheme = darkColorScheme(
     primary = primaryDark,
     onPrimary = onPrimaryDark,
@@ -90,6 +96,9 @@ private val darkScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
+/**
+ * El esquema de color claro de contraste medio para la aplicación.
+ */
 private val mediumContrastLightColorScheme = lightColorScheme(
     primary = primaryLightMediumContrast,
     onPrimary = onPrimaryLightMediumContrast,
@@ -128,6 +137,9 @@ private val mediumContrastLightColorScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightMediumContrast,
 )
 
+/**
+ * El esquema de color claro de alto contraste para la aplicación.
+ */
 private val highContrastLightColorScheme = lightColorScheme(
     primary = primaryLightHighContrast,
     onPrimary = onPrimaryLightHighContrast,
@@ -166,6 +178,9 @@ private val highContrastLightColorScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightHighContrast,
 )
 
+/**
+ * El esquema de color oscuro de contraste medio para la aplicación.
+ */
 private val mediumContrastDarkColorScheme = darkColorScheme(
     primary = primaryDarkMediumContrast,
     onPrimary = onPrimaryDarkMediumContrast,
@@ -204,6 +219,9 @@ private val mediumContrastDarkColorScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDarkMediumContrast,
 )
 
+/**
+ * El esquema de color oscuro de alto contraste para la aplicación.
+ */
 private val highContrastDarkColorScheme = darkColorScheme(
     primary = primaryDarkHighContrast,
     onPrimary = onPrimaryDarkHighContrast,
@@ -242,6 +260,9 @@ private val highContrastDarkColorScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDarkHighContrast,
 )
 
+/**
+ * Una familia de colores que contiene un color, un color "on", un contenedor de color y un contenedor de color "on".
+ */
 @Immutable
 data class ColorFamily(
     val color: Color,
@@ -254,6 +275,13 @@ val unspecified_scheme = ColorFamily(
     Color.Unspecified, Color.Unspecified, Color.Unspecified, Color.Unspecified
 )
 
+/**
+ * El tema de la aplicación de Sevilla.
+ *
+ * @param darkTheme Si el tema oscuro está habilitado.
+ * @param dynamicColor Si el color dinámico está habilitado.
+ * @param content El contenido de la aplicación.
+ */
 @Composable
 fun SevillaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

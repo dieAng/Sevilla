@@ -6,12 +6,18 @@ import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import com.example.sevilla.R
 
+/**
+ * El proveedor de fuentes de Google.
+ */
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
     providerPackage = "com.google.android.gms",
     certificates = R.array.com_google_android_gms_fonts_certs
 )
 
+/**
+ * La familia de fuentes para el cuerpo del texto.
+ */
 val bodyFontFamily = FontFamily(
     Font(
         googleFont = GoogleFont("Slabo 13px"),
@@ -19,6 +25,9 @@ val bodyFontFamily = FontFamily(
     )
 )
 
+/**
+ * La familia de fuentes para el texto de visualización.
+ */
 val displayFontFamily = FontFamily(
     Font(
         googleFont = GoogleFont("Slabo 27px"),
@@ -29,6 +38,9 @@ val displayFontFamily = FontFamily(
 // Default Material 3 typography values
 val baseline = Typography()
 
+/**
+ * La tipografía de la aplicación.
+ */
 val AppTypography = Typography(
     displayLarge = baseline.displayLarge.copy(fontFamily = displayFontFamily),
     displayMedium = baseline.displayMedium.copy(fontFamily = displayFontFamily),

@@ -28,6 +28,13 @@ import androidx.compose.ui.unit.dp
 import com.example.sevilla.data.DataSource
 import com.example.sevilla.model.SevillaItem
 
+/**
+ * Una pantalla componible que muestra los detalles de un lugar.
+ *
+ * @param lugar El lugar a mostrar.
+ * @param onGoToMap La función a la que se llamará cuando el usuario haga clic en el mapa.
+ * @param modifier El modificador que se aplicará a la pantalla.
+ */
 @Composable
 fun DetallesLugarScreen(
     lugar: SevillaItem.Lugar?,
@@ -83,6 +90,9 @@ fun DetallesLugarScreen(
     }
 }
 
+/**
+ * Una vista previa componible para la pantalla de detalles del lugar.
+ */
 @Preview
 @Composable
 fun DetallesLugarPreview() {
