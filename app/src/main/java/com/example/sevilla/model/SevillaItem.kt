@@ -1,15 +1,19 @@
 package com.example.sevilla.model
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+
 class SevillaItem {
     data class Categoria(
-        val nombre: Int,
+        @StringRes val nombre: Int,
         val lugares: List<Lugar>,
-        val imagen: Int
+        @DrawableRes val imagen: Int
     )
 
     data class Lugar(
-        val nombre: Int,
-        val descripcion: Int?,
-        val imagen: Int
+        @StringRes val nombre: Int,
+        @StringRes val descripcion: Int?,
+        @StringRes val ubicacion: Int,
+        @DrawableRes val imagen: Int
     )
 }
